@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Тест для HTML2JSON Конвертера</title>
+</head>
+
+<body>
+
+    <!-- 1. Тест вкладеності та пустих тегів (Self-closing / Void elements) -->
+    <div id="void-elements-test" class="container main">
+        <p>Перед лінією</p>
+        <hr id="test-hr" data-status="empty" />
+        <p>Після лінії та зображення</p>
+        <img src="https://example.com" alt="Тестове фото" />
+    </div>
+
+    <!-- 2. Тест специфічних атрибутів та логічних (boolean) атрибутів -->
+    <form action="/submit" method="POST" novalidate>
+        <input type="text" name="username" value="JohnDoe" required disabled>
+        <input type="checkbox" name="agree" checked>
+    </form>
+
+    <!-- 3. Тест таблиць зі складною структурою (Rowspan / Colspan) -->
+    <table border="1" class="data-table">
+        <thead>
+            <tr>
+                <th colspan="2">Заголовок на 2 колонки</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Рядок 1 і 2</td>
+                <td>Комірка 1B</td>
+            </tr>
+            <tr>
+                <td>Комірка 2B</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 4. Тест кастомних тегів та інлайнових скриптів (Custom Elements & Templates) -->
+    <my-custom-component data-uuid="abc-123">
+        <template id="shadow-template">
+            <span>Прихований шаблон</span>
+        </template>
+        <script type="application/json" id="embedded-data">
+            {"user_id": 42, "role": "admin"}
+        </script>
+    </my-custom-component>
+
+    <!-- 5. Тест "брудного" тексту: суміш тексту, тегів та сутностей (HTML Entities) -->
+    <div class="text-soup">
+        Цей текст містить <strong>жирний фрагмент</strong>, знак &lt; (менше), &amp; (амперсанд) та
+        <span>вкладений спан із <em>курсивом</em> всередині</span>.
+    </div>
+
+</body>
+
+</html>

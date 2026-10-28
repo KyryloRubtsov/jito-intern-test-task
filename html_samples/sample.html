@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музей рідкісних та дивних HTML-тегів</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🏛️ Музей найрідкісніших та найдивніших HTML-тегів</h1>
+
+    <!-- 1. Тег <meter> -->
+    <section>
+        <h2>1. Тег &lt;meter&gt; (Вимірювач у заданому діапазоні)</h2>
+        <p>Використовується для відображення відомих значень (наприклад, рівень диску чи прогрес голосування).</p>
+        <span class="label">Результат:</span>
+        <meter value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="0.6">80%</meter>
+    </section>
+
+    <!-- 2. Тег <details> та <summary> -->
+    <section>
+        <h2>2. Теги &lt;details&gt; та &lt;summary&gt; (Вбудований спойлер/акордеон)</h2>
+        <p>Створює інтерактивний віджет, який можна відкривати та закривати без жодного рядка JavaScript чи CSS.</p>
+        <span class="label">Результат:</span>
+        <details>
+            <summary>Натисни, щоб дізнатися таємницю...</summary>
+            <p>🎉 Вітаємо! Ви відкрили прихований текст за допомогою чистого HTML.</p>
+        </details>
+    </section>
+
+    <!-- 3. Тег <ruby>, <rt>, <rp> -->
+    <section>
+        <h2>3. Теги &lt;ruby&gt;, &lt;rt&gt;, &lt;rp&gt; (Азіатська анотація/фурігана)</h2>
+        <p>Використовується для показу маленьких підказок над ієрогліфами (наприклад, як вони читаються).</p>
+        <span class="label">Результат:</span>
+        <p>Приклад японського слова "Вузол":
+            <ruby>
+                結び目 <rt>musubime</rt>
+            </ruby>
+        </p>
+    </section>
+
+    <!-- 4. Тег <bdo> -->
+    <section>
+        <h2>4. Тег &lt;bdo&gt; (Зміна напрямку тексту)</h2>
+        <p>Перевертає напрямок відображення тексту задом наперед (Bi-Directional Override).</p>
+        <span class="label">Результат:</span>
+        <p>Цей текст читається зліва направо. А цей: <bdo dir="rtl">Цей текст розгорнуто задом наперед!</bdo></p>
+    </section>
+
+    <!-- 5. Тег <wbr> -->
+    <section>
+        <h2>5. Тег &lt;wbr&gt; (Можливе розривання слова)</h2>
+        <p>Вказує браузеру, де *можна* розірвати дуже довге слово, якщо воно не поміщається на екрані (наприклад, на
+            мобільних телефонах).</p>
+        <span class="label">Результат:</span>
+        <p>ДужеДовгеСловоЯкеНеВміщається<wbr>НаЕкраніАлеРозірветься<wbr>СамеТутЯкщоБудеПотреба.</p>
+    </section>
+
+    <!-- 6. Тег <kbd> -->
+    <section>
+        <h2>6. Тег &lt;kbd&gt; (Введення з клавіатури)</h2>
+        <p>Використовується для позначення гарячих клавіш. За замовчуванням стилізується моноширинним шрифтом.</p>
+        <span class="label">Результат:</span>
+        <p>Щоб зберегти сторінку, натисніть <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+    </section>
+
+    <!-- 7. Тег <data> -->
+    <section>
+        <h2>7. Тег &lt;data&gt; (Дані для машини)</h2>
+        <p>Зв'язує текст, зрозумілий людині, з даними, які може зчитувати скрипт (через атрибут `value`). Візуально на
+            сторінці нічого не змінюється.</p>
+        <span class="label">Результат:</span>
+        <ul>
+            <li>Товар: <data value="99823">Конструктор LEGO</data></li>
+            <li>Товар: <data value="11204">Плюшевий ведмідь</data></li>
+        </ul>
+    </section>
+
+    <!-- ПРИВІТ З МИНУЛОГО: Тег <marquee> (Застарілий, але легендарний) -->
+    <section style="background: #fff3cd;">
+        <h2>⚠️ Бонус: Легендарний &lt;marquee&gt; (Рядок, що біжить)</h2>
+        <p>Цей тег офіційно застарів (deprecated) і його не варто використовувати, але більшість сучасних браузерів досі
+            його підтримують заради ностальгії.</p>
+        <span class="label">Результат:</span>
+        <marquee behavior="scroll" direction="left" scrollamount="5">🛸 Увага! Ретро-дизайн повертається! Я біжу по
+            екрану без жодного CSS!</marquee>
+    </section>
+
+</body>
+
+</html>
